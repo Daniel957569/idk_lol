@@ -1,0 +1,3 @@
+/home/daniel957569/tests/c/clox/CMakeFiles/clox.dir
+/home/daniel957569/tests/c/clox/CMakeFiles/edit_cache.dir
+/home/daniel957569/tests/c/clox/CMakeFiles/rebuild_cache.dir
