@@ -156,12 +156,14 @@ static void beginScope() { current->scopeDepth++; }
 
 static void endScope() {
   current->scopeDepth--;
+  int times = 0;
 
   while (current->localCount > 0 &&
          current->locals[current->localCount - 1].depth > current->scopeDepth) {
-    emitByte(OP_POP);
+    times++;
     current->localCount--;
   }
+  emitBytes(OP_POPN, makeConstant(NUMBER_VAL(times)));
 }
 
 static void expression();
