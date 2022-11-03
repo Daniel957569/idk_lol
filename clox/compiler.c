@@ -414,11 +414,9 @@ static void parsePrecedence(Precedence precedence) {
   advance();
   ParseFn prefixRule = getRule(parser.previous.type)->prefix;
   if (prefixRule == NULL) {
-    printf("%d", parser.previous.type);
     error("Expect expression.");
     return;
   }
-  printf("%d", parser.previous.type);
 
   bool canAssign = precedence <= PREC_ASSIGNMENT;
   prefixRule(canAssign);
